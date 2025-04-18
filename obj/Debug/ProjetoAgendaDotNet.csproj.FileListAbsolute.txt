@@ -1,0 +1,11 @@
+C:\Users\LabInfo\source\repos\ProjetoAgendaDotNet\bin\Debug\ProjetoAgendaDotNet.exe.config
+C:\Users\LabInfo\source\repos\ProjetoAgendaDotNet\bin\Debug\ProjetoAgendaDotNet.exe
+C:\Users\LabInfo\source\repos\ProjetoAgendaDotNet\bin\Debug\ProjetoAgendaDotNet.pdb
+C:\Users\LabInfo\source\repos\ProjetoAgendaDotNet\obj\Debug\ProjetoAgendaDotNet.csproj.AssemblyReference.cache
+C:\Users\LabInfo\source\repos\ProjetoAgendaDotNet\obj\Debug\ProjetoAgendaDotNet.Form1.resources
+C:\Users\LabInfo\source\repos\ProjetoAgendaDotNet\obj\Debug\ProjetoAgendaDotNet.Properties.Resources.resources
+C:\Users\LabInfo\source\repos\ProjetoAgendaDotNet\obj\Debug\ProjetoAgendaDotNet.csproj.GenerateResource.cache
+C:\Users\LabInfo\source\repos\ProjetoAgendaDotNet\obj\Debug\ProjetoAgendaDotNet.csproj.CoreCompileInputs.cache
+C:\Users\LabInfo\source\repos\ProjetoAgendaDotNet\obj\Debug\ProjetoAgendaDotNet.exe
+C:\Users\LabInfo\source\repos\ProjetoAgendaDotNet\obj\Debug\ProjetoAgendaDotNet.pdb
+C:\Users\LabInfo\source\repos\ProjetoAgendaDotNet\obj\Debug\ProjetoAgendaDotNet.MDI_Menu.resources

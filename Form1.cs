@@ -31,5 +31,14 @@ namespace ProjetoAgendaDotNet
             this.dSPessoaTableAdapter.Fill(this.dataSetPessoa.DSPessoa);
 
         }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Deseja realmente excluir o registro?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                dSPessoaBindingSource.RemoveCurrent();
+
+            }
+        }
     }
 }

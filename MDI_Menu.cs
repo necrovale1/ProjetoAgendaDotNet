@@ -19,9 +19,16 @@ namespace ProjetoAgendaDotNet
 
         private void pessoasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form1 frmCadP = new Form1();
-            frmCadP.MdiParent = this;
-            frmCadP.ShowDialog();
+            this.Hide();
+            Form1 form1 = new Form1();
+            form1.ShowDialog();
+        }
+
+        private void pessoasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form2 form2 = new Form2();
+            form2.ShowDialog(); 
         }
     }
 }

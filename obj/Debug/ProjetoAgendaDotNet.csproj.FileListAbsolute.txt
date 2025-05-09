@@ -9,3 +9,4 @@ C:\Users\LabInfo\source\repos\ProjetoAgendaDotNet\obj\Debug\ProjetoAgendaDotNet.
 C:\Users\LabInfo\source\repos\ProjetoAgendaDotNet\obj\Debug\ProjetoAgendaDotNet.exe
 C:\Users\LabInfo\source\repos\ProjetoAgendaDotNet\obj\Debug\ProjetoAgendaDotNet.pdb
 C:\Users\LabInfo\source\repos\ProjetoAgendaDotNet\obj\Debug\ProjetoAgendaDotNet.MDI_Menu.resources
+C:\Users\LabInfo\Source\Repos\ProjetoAgendaDotNet\obj\Debug\ProjetoAgendaDotNet.Form2.resources

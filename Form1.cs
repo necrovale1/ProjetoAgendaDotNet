@@ -17,12 +17,32 @@ namespace ProjetoAgendaDotNet
             InitializeComponent();
         }
 
+        private void dSPessoaBindingSource_AddingNew(object sender, AddingNewEventArgs e)
+        {
+            // O ID será gerado automaticamente pelo banco
+            // Não precisamos definir manualmente
+        }
+
         private void dSPessoaBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.dSPessoaBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.dataSetPessoa);
+            try
+            {
+                this.Validate();
+                this.dSPessoaBindingSource.EndEdit();
 
+                // Verifica se é uma nova linha
+                if (((DataRowView)dSPessoaBindingSource.Current).IsNew)
+                {
+                    // Remove qualquer valor que possa ter sido inserido no ID
+                    ((DataRowView)dSPessoaBindingSource.Current)["ID"] = DBNull.Value;
+                }
+
+                this.tableAdapterManager.UpdateAll(this.dataSetPessoa);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao salvar: " + ex.Message);
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -34,11 +54,46 @@ namespace ProjetoAgendaDotNet
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Deseja realmente excluir o registro?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            try
             {
-                dSPessoaBindingSource.RemoveCurrent();
+                // Verifica se há um registro atual para excluir
+                if (dSPessoaBindingSource.Current == null)
+                {
+                    MessageBox.Show("Não há registro selecionado para excluir.", "Aviso",
+                                  MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
 
+                // Confirmação do usuário
+                var confirmResult = MessageBox.Show("Deseja realmente excluir o registro?", "Atenção",
+                                                  MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (confirmResult == DialogResult.Yes)
+                {
+                    // Remove o registro atual
+                    dSPessoaBindingSource.RemoveCurrent();
+
+                    // Atualiza o banco de dados
+                    this.tableAdapterManager.UpdateAll(this.dataSetPessoa);
+
+                    // Opcional: Exibe mensagem de sucesso
+                    MessageBox.Show("Registro excluído com sucesso!", "Sucesso",
+                                  MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
+            catch (Exception ex)
+            {
+                // Tratamento de erros
+                MessageBox.Show($"Ocorreu um erro ao excluir o registro:\n{ex.Message}", "Erro",
+                              MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void menuPriToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MDI_Menu mDI_Menu = new MDI_Menu();
+            mDI_Menu.ShowDialog();
         }
     }
 }

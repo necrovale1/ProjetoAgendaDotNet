@@ -291,6 +291,8 @@ namespace ProjetoAgendaDotNet.Dados {
             
             private global::System.Data.DataColumn columnDataNasc;
             
+            private global::System.Data.DataColumn columnTelefone;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public DSPessoaDataTable() {
@@ -374,6 +376,14 @@ namespace ProjetoAgendaDotNet.Dados {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TelefoneColumn {
+                get {
+                    return this.columnTelefone;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -409,7 +419,7 @@ namespace ProjetoAgendaDotNet.Dados {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DSPessoaRow AddDSPessoaRow(string Nome, string Endereco, string Cidade, string Email, System.DateTime DataNasc) {
+            public DSPessoaRow AddDSPessoaRow(string Nome, string Endereco, string Cidade, string Email, System.DateTime DataNasc, string Telefone) {
                 DSPessoaRow rowDSPessoaRow = ((DSPessoaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -417,7 +427,8 @@ namespace ProjetoAgendaDotNet.Dados {
                         Endereco,
                         Cidade,
                         Email,
-                        DataNasc};
+                        DataNasc,
+                        Telefone};
                 rowDSPessoaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDSPessoaRow);
                 return rowDSPessoaRow;
@@ -453,6 +464,7 @@ namespace ProjetoAgendaDotNet.Dados {
                 this.columnCidade = base.Columns["Cidade"];
                 this.columnEmail = base.Columns["Email"];
                 this.columnDataNasc = base.Columns["DataNasc"];
+                this.columnTelefone = base.Columns["Telefone"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -470,6 +482,8 @@ namespace ProjetoAgendaDotNet.Dados {
                 base.Columns.Add(this.columnEmail);
                 this.columnDataNasc = new global::System.Data.DataColumn("DataNasc", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDataNasc);
+                this.columnTelefone = new global::System.Data.DataColumn("Telefone", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTelefone);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -715,6 +729,22 @@ namespace ProjetoAgendaDotNet.Dados {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Telefone {
+                get {
+                    try {
+                        return ((string)(this[this.tableDSPessoa.TelefoneColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("O valor da coluna \'Telefone\' na tabela \'DSPessoa\' é DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDSPessoa.TelefoneColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsNomeNull() {
                 return this.IsNull(this.tableDSPessoa.NomeColumn);
             }
@@ -771,6 +801,18 @@ namespace ProjetoAgendaDotNet.Dados {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetDataNascNull() {
                 this[this.tableDSPessoa.DataNascColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTelefoneNull() {
+                return this.IsNull(this.tableDSPessoa.TelefoneColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTelefoneNull() {
+                this[this.tableDSPessoa.TelefoneColumn] = global::System.Convert.DBNull;
             }
         }
         

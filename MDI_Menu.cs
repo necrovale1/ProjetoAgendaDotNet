@@ -30,5 +30,17 @@ namespace ProjetoAgendaDotNet
             Form2 form2 = new Form2();
             form2.ShowDialog(); 
         }
+
+        private void tsmiSair_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("Deseja Sair?","Confirmar",MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+            if (resultado == DialogResult.Yes)
+            {
+                this.Close();
+            }
+            else {
+                return;
+            }
+        }
     }
 }

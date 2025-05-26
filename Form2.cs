@@ -151,5 +151,13 @@ namespace ProjetoAgendaDotNet
                 this.dSPessoaTableAdapter.Fill(this.dataSetPessoa.DSPessoa);
             }
         }
+
+        private void tstxtMenuPrincipal_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MDI_Menu mDI_Menu = new MDI_Menu();
+            mDI_Menu.ShowDialog();
+
+        }
     }
 }

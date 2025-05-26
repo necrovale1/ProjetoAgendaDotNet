@@ -34,13 +34,14 @@
             this.pessoasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.compromissosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pessoasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.janelasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.pessoasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiSair = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -54,7 +55,8 @@
             this.consultasToolStripMenuItem,
             this.tToolStripMenuItem,
             this.janelasToolStripMenuItem,
-            this.ajudaToolStripMenuItem});
+            this.ajudaToolStripMenuItem,
+            this.tsmiSair});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 33);
@@ -73,14 +75,14 @@
             // pessoasToolStripMenuItem
             // 
             this.pessoasToolStripMenuItem.Name = "pessoasToolStripMenuItem";
-            this.pessoasToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.pessoasToolStripMenuItem.Size = new System.Drawing.Size(235, 34);
             this.pessoasToolStripMenuItem.Text = "Pessoas";
             this.pessoasToolStripMenuItem.Click += new System.EventHandler(this.pessoasToolStripMenuItem_Click);
             // 
             // compromissosToolStripMenuItem
             // 
             this.compromissosToolStripMenuItem.Name = "compromissosToolStripMenuItem";
-            this.compromissosToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.compromissosToolStripMenuItem.Size = new System.Drawing.Size(235, 34);
             this.compromissosToolStripMenuItem.Text = "Compromissos";
             // 
             // consultasToolStripMenuItem
@@ -90,6 +92,13 @@
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(105, 29);
             this.consultasToolStripMenuItem.Text = "Consultas";
+            // 
+            // pessoasToolStripMenuItem1
+            // 
+            this.pessoasToolStripMenuItem1.Name = "pessoasToolStripMenuItem1";
+            this.pessoasToolStripMenuItem1.Size = new System.Drawing.Size(176, 34);
+            this.pessoasToolStripMenuItem1.Text = "Pessoas";
+            this.pessoasToolStripMenuItem1.Click += new System.EventHandler(this.pessoasToolStripMenuItem1_Click);
             // 
             // tToolStripMenuItem
             // 
@@ -138,12 +147,12 @@
             this.toolStripButton1.Size = new System.Drawing.Size(34, 28);
             this.toolStripButton1.Text = "toolStripButton1";
             // 
-            // pessoasToolStripMenuItem1
+            // tsmiSair
             // 
-            this.pessoasToolStripMenuItem1.Name = "pessoasToolStripMenuItem1";
-            this.pessoasToolStripMenuItem1.Size = new System.Drawing.Size(270, 34);
-            this.pessoasToolStripMenuItem1.Text = "Pessoas";
-            this.pessoasToolStripMenuItem1.Click += new System.EventHandler(this.pessoasToolStripMenuItem1_Click);
+            this.tsmiSair.Name = "tsmiSair";
+            this.tsmiSair.Size = new System.Drawing.Size(57, 29);
+            this.tsmiSair.Text = "Sair";
+            this.tsmiSair.Click += new System.EventHandler(this.tsmiSair_Click);
             // 
             // MDI_Menu
             // 
@@ -179,5 +188,6 @@
         private System.Windows.Forms.ToolStripMenuItem pessoasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem compromissosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pessoasToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSair;
     }
 }

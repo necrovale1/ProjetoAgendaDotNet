@@ -1,5 +1,6 @@
 ﻿namespace ProjetoAgendaDotNet
 {
+    //MDI CONSULTA
     partial class Form2
     {
         /// <summary>
@@ -57,9 +58,12 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tsp1 = new System.Windows.Forms.ToolStrip();
+            this.tstxtMenuPrincipal = new System.Windows.Forms.ToolStripTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dSPessoaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetPessoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSPessoaDataGridView)).BeginInit();
+            this.tsp1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -292,6 +296,23 @@
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.Width = 150;
             // 
+            // tsp1
+            // 
+            this.tsp1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.tsp1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tstxtMenuPrincipal});
+            this.tsp1.Location = new System.Drawing.Point(0, 0);
+            this.tsp1.Name = "tsp1";
+            this.tsp1.Size = new System.Drawing.Size(1620, 31);
+            this.tsp1.TabIndex = 28;
+            // 
+            // tstxtMenuPrincipal
+            // 
+            this.tstxtMenuPrincipal.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.tstxtMenuPrincipal.Name = "tstxtMenuPrincipal";
+            this.tstxtMenuPrincipal.Size = new System.Drawing.Size(150, 38);
+            this.tstxtMenuPrincipal.Text = "Menu Principal";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -299,6 +320,7 @@
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1620, 659);
             this.ControlBox = false;
+            this.Controls.Add(this.tsp1);
             this.Controls.Add(this.dSPessoaDataGridView);
             this.Controls.Add(this.txtFiltroEmail);
             this.Controls.Add(this.txtFiltroTelefone);
@@ -317,11 +339,13 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "MDI_Consulta";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dSPessoaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetPessoa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSPessoaDataGridView)).EndInit();
+            this.tsp1.ResumeLayout(false);
+            this.tsp1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -357,5 +381,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.ToolStrip tsp1;
+        private System.Windows.Forms.ToolStripTextBox tstxtMenuPrincipal;
     }
 }

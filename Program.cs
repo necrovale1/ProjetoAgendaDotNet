@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace ProjetoAgendaDotNet
@@ -12,15 +11,8 @@ namespace ProjetoAgendaDotNet
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            FrmSplashScreen splash = new FrmSplashScreen();
-            splash.Show();
-            for (int i = 0; i <= 100; i++)
-            {
-                splash.UpdateProgress(i);
-                Thread.Sleep(30); // Simula carregamento
-            }
-            splash.Close();
-
+            // Inicia diretamente o menu principal. 
+            // A inicialização do banco não é mais necessária aqui.
             Application.Run(new MDI_Menu());
         }
     }

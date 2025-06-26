@@ -56,7 +56,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetPessoa.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DatabaseManager.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -4,6 +4,9 @@
 
     partial class DataSetPessoa
     {
+        partial class DSPessoaDataTable
+        {
+        }
     }
 }
 

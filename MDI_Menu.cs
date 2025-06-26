@@ -22,13 +22,15 @@ namespace ProjetoAgendaDotNet
             this.Hide();
             Form1 form1 = new Form1();
             form1.ShowDialog();
+            this.Show();
         }
 
         private void pessoasToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             this.Hide();
             Form2 form2 = new Form2();
-            form2.ShowDialog(); 
+            form2.ShowDialog();
+            this.Show();
         }
 
         private void tsmiSair_Click(object sender, EventArgs e)

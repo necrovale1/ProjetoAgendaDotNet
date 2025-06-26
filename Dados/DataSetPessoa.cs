@@ -7,9 +7,11 @@
     }
 }
 
-namespace ProjetoAgendaDotNet.DataSetPessoaTableAdapters {
-    
-    
-    public partial class DSPessoaTableAdapter {
+namespace ProjetoAgendaDotNet.Dados.DataSetPessoaTableAdapters
+{
+
+
+    public partial class DSPessoaTableAdapter
+    {
     }
 }

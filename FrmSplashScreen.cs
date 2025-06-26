@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Media;
 using System.Windows.Forms;
 
@@ -7,45 +8,40 @@ namespace ProjetoAgendaDotNet
     public partial class FrmSplashScreen : Form
     {
         private SoundPlayer player;
+        private Timer closeTimer;
 
         public FrmSplashScreen()
         {
-            // Este método é definido no arquivo FrmSplashScreen.Designer.cs
             InitializeComponent();
 
-            // Atribui os eventos aos métodos que irão lidar com eles
-            this.Load += FrmSplashScreen_Load;
-            this.FormClosed += FrmSplashScreen_FormClosed;
-        }
+            // Initialize components
+            closeTimer = new Timer();
+            player = new SoundPlayer(Properties.Resources.chinarap);
 
-        // Método público que permite ao Program.cs controlar a barra de progresso
-        public void UpdateProgress(int progress)
-        {
-            if (progress >= progressBar1.Minimum && progress <= progressBar1.Maximum)
-            {
-                progressBar1.Value = progress;
-            }
-        }
+            // Set form properties
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.BackColor = Color.Salmon;
 
-        // Lógica para quando o formulário carrega
-        private void FrmSplashScreen_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                player = new SoundPlayer(Properties.Resources.chinarap);
-                player.PlayLooping();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Erro ao carregar música: " + ex.Message);
-            }
-        }
+            // Set up progress bar
+            progressBar1.Style = ProgressBarStyle.Marquee;
+            progressBar1.MarqueeAnimationSpeed = 30;
 
-        // Lógica para quando o formulário fecha
-        private void FrmSplashScreen_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            player?.Stop();
-            player?.Dispose();
+            // Load embedded image
+            pictureBox1.Image = Properties.Resources.loading;
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            // Play sound
+            player.Play();
+
+            // Set up auto-close timer
+            closeTimer.Interval = 3000;
+            closeTimer.Tick += (s, e) =>
+            {
+                player.Stop();
+                this.Close();
+            };
+            closeTimer.Start();
         }
     }
 }

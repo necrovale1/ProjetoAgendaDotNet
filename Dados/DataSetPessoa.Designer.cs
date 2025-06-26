@@ -1148,15 +1148,16 @@ namespace ProjetoAgendaDotNet.Dados.DataSetPessoaTableAdapters
             tableMapping.ColumnMappings.Add("DataNasc", "DataNasc");
             tableMapping.ColumnMappings.Add("Telefone", "Telefone");
             this._adapter.TableMappings.Add(tableMapping);
+
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Pessoas] WHERE (([ID] = @Original_ID))"; // ALTERADO
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Pessoas] WHERE (([ID] = @Original_ID))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
 
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Pessoas] ([Nome], [Endereco], [Cidade], [Email], [DataNasc], [Telefone]) VALUES (@Nome, @Endereco, @Cidade, @Email, @DataNasc, @Telefone);\r\nSELECT ID, Nome, Endereco, Cidade, Email, DataNasc, Telefone FROM Pessoas WHERE (ID = SCOPE_IDENTITY())"; // ALTERADO
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Pessoas] ([Nome], [Endereco], [Cidade], [Email], [DataNasc], [Telefone]) VALUES (@Nome, @Endereco, @Cidade, @Email, @DataNasc, @Telefone);\r\nSELECT ID, Nome, Endereco, Cidade, Email, DataNasc, Telefone FROM Pessoas WHERE (ID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Endereco", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Endereco", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1167,7 +1168,7 @@ namespace ProjetoAgendaDotNet.Dados.DataSetPessoaTableAdapters
 
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Pessoas] SET [Nome] = @Nome, [Endereco] = @Endereco, [Cidade] = @Cidade, [Email] = @Email, [DataNasc] = @DataNasc, [Telefone] = @Telefone WHERE (([ID] = @Original_ID));\r\nSELECT ID, Nome, Endereco, Cidade, Email, DataNasc, Telefone FROM Pessoas WHERE (ID = @ID)"; // ALTERADO
+            this._adapter.UpdateCommand.CommandText = "UPDATE [Pessoas] SET [Nome] = @Nome, [Endereco] = @Endereco, [Cidade] = @Cidade, [Email] = @Email, [DataNasc] = @DataNasc, [Telefone] = @Telefone WHERE (([ID] = @Original_ID));\r\nSELECT ID, Nome, Endereco, Cidade, Email, DataNasc, Telefone FROM Pessoas WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Endereco", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Endereco", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));

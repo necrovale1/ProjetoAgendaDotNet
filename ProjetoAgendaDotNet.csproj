@@ -80,6 +80,12 @@
     <Compile Include="FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmSplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSplashScreen.Designer.cs">
+      <DependentUpon>FrmSplashScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="MDI_Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,12 +94,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="FrmSplashScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmSplashScreen.Designer.cs">
-      <DependentUpon>FrmSplashScreen.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,7 +147,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\chinaflag.png" />
+    <Resource Include="Resources\chinaflag.png" />
     <Content Include="Resources\chinarap.wav" />
     <Resource Include="Resources\loading.gif" />
   </ItemGroup>

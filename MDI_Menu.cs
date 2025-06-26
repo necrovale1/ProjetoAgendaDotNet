@@ -15,7 +15,6 @@ namespace ProjetoAgendaDotNet
         public MDI_Menu()
         {
             InitializeComponent();
-            // Garante que o formulário será um contêiner MDI
             this.IsMdiContainer = true;
         }
 

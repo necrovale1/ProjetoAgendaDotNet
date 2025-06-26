@@ -108,5 +108,10 @@ namespace ProjetoAgendaDotNet
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void dSPessoaDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -159,5 +159,10 @@ namespace ProjetoAgendaDotNet
             mDI_Menu.ShowDialog();
 
         }
+
+        private void tsp1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

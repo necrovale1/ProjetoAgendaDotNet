@@ -163,6 +163,7 @@
             // dSPessoaBindingNavigator
             // 
             this.dSPessoaBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.dSPessoaBindingNavigator.BackColor = System.Drawing.Color.MistyRose;
             this.dSPessoaBindingNavigator.BindingSource = this.dSPessoaBindingSource;
             this.dSPessoaBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.dSPessoaBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
@@ -255,6 +256,7 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posição";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.BackColor = System.Drawing.Color.MistyRose;
             this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(35, 23);
@@ -309,55 +311,65 @@
             // 
             // txbNome
             // 
+            this.txbNome.BackColor = System.Drawing.Color.MistyRose;
             this.txbNome.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dSPessoaBindingSource, "Nome", true));
             this.txbNome.Location = new System.Drawing.Point(103, 89);
-            this.txbNome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbNome.Margin = new System.Windows.Forms.Padding(2);
             this.txbNome.Name = "txbNome";
             this.txbNome.Size = new System.Drawing.Size(135, 20);
             this.txbNome.TabIndex = 4;
             // 
             // txbEndereco
             // 
+            this.txbEndereco.BackColor = System.Drawing.Color.MistyRose;
             this.txbEndereco.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dSPessoaBindingSource, "Endereco", true));
             this.txbEndereco.Location = new System.Drawing.Point(103, 110);
-            this.txbEndereco.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbEndereco.Margin = new System.Windows.Forms.Padding(2);
             this.txbEndereco.Name = "txbEndereco";
             this.txbEndereco.Size = new System.Drawing.Size(135, 20);
             this.txbEndereco.TabIndex = 6;
             // 
             // txbCidade
             // 
+            this.txbCidade.BackColor = System.Drawing.Color.MistyRose;
             this.txbCidade.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dSPessoaBindingSource, "Cidade", true));
             this.txbCidade.Location = new System.Drawing.Point(103, 131);
-            this.txbCidade.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbCidade.Margin = new System.Windows.Forms.Padding(2);
             this.txbCidade.Name = "txbCidade";
             this.txbCidade.Size = new System.Drawing.Size(135, 20);
             this.txbCidade.TabIndex = 8;
             // 
             // txbEmail
             // 
+            this.txbEmail.BackColor = System.Drawing.Color.MistyRose;
             this.txbEmail.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dSPessoaBindingSource, "Email", true));
             this.txbEmail.Location = new System.Drawing.Point(103, 151);
-            this.txbEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txbEmail.Name = "txbEmail";
             this.txbEmail.Size = new System.Drawing.Size(135, 20);
             this.txbEmail.TabIndex = 10;
             // 
             // dtpData
             // 
+            this.dtpData.CalendarForeColor = System.Drawing.Color.MistyRose;
+            this.dtpData.CalendarMonthBackground = System.Drawing.Color.MistyRose;
+            this.dtpData.CalendarTitleBackColor = System.Drawing.Color.MistyRose;
+            this.dtpData.CalendarTitleForeColor = System.Drawing.Color.Red;
+            this.dtpData.CalendarTrailingForeColor = System.Drawing.Color.MistyRose;
             this.dtpData.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.dSPessoaBindingSource, "DataNasc", true));
             this.dtpData.Location = new System.Drawing.Point(103, 196);
-            this.dtpData.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpData.Margin = new System.Windows.Forms.Padding(2);
             this.dtpData.Name = "dtpData";
             this.dtpData.Size = new System.Drawing.Size(135, 20);
             this.dtpData.TabIndex = 12;
             // 
             // iDTextBox
             // 
+            this.iDTextBox.BackColor = System.Drawing.Color.MistyRose;
             this.iDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dSPessoaBindingSource, "ID", true));
             this.iDTextBox.Enabled = false;
             this.iDTextBox.Location = new System.Drawing.Point(103, 68);
-            this.iDTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.iDTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.iDTextBox.Name = "iDTextBox";
             this.iDTextBox.ReadOnly = true;
             this.iDTextBox.Size = new System.Drawing.Size(135, 20);
@@ -365,6 +377,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.MistyRose;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuPriToolStripMenuItem});
@@ -395,6 +408,7 @@
             // dSPessoaDataGridView
             // 
             this.dSPessoaDataGridView.AutoGenerateColumns = false;
+            this.dSPessoaDataGridView.BackgroundColor = System.Drawing.Color.RosyBrown;
             this.dSPessoaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dSPessoaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -404,13 +418,15 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6});
             this.dSPessoaDataGridView.DataSource = this.dSPessoaBindingSource;
+            this.dSPessoaDataGridView.GridColor = System.Drawing.Color.Firebrick;
             this.dSPessoaDataGridView.Location = new System.Drawing.Point(289, 62);
-            this.dSPessoaDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dSPessoaDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.dSPessoaDataGridView.Name = "dSPessoaDataGridView";
             this.dSPessoaDataGridView.RowHeadersWidth = 62;
             this.dSPessoaDataGridView.RowTemplate.Height = 28;
             this.dSPessoaDataGridView.Size = new System.Drawing.Size(751, 143);
             this.dSPessoaDataGridView.TabIndex = 14;
+            this.dSPessoaDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dSPessoaDataGridView_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -463,15 +479,17 @@
             // 
             // txbTelefone
             // 
+            this.txbTelefone.BackColor = System.Drawing.Color.MistyRose;
             this.txbTelefone.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dSPessoaBindingSource, "Email", true));
             this.txbTelefone.Location = new System.Drawing.Point(103, 176);
-            this.txbTelefone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txbTelefone.Margin = new System.Windows.Forms.Padding(2);
             this.txbTelefone.Name = "txbTelefone";
             this.txbTelefone.Size = new System.Drawing.Size(135, 20);
             this.txbTelefone.TabIndex = 16;
             // 
             // statusStrip1
             // 
+            this.statusStrip1.BackColor = System.Drawing.Color.MistyRose;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
             this.statusStrip1.Location = new System.Drawing.Point(0, 228);
@@ -490,11 +508,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.MistyRose;
             this.ClientSize = new System.Drawing.Size(1125, 250);
+            this.Controls.Add(this.dSPessoaDataGridView);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(lblTelefone);
             this.Controls.Add(this.txbTelefone);
-            this.Controls.Add(this.dSPessoaDataGridView);
             this.Controls.Add(lblID);
             this.Controls.Add(this.iDTextBox);
             this.Controls.Add(lblNome);
@@ -509,8 +528,9 @@
             this.Controls.Add(this.dtpData);
             this.Controls.Add(this.dSPessoaBindingNavigator);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "MDI_Pessoas";
             this.Load += new System.EventHandler(this.Form1_Load);

@@ -30,6 +30,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -69,78 +70,87 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(45, 107);
+            this.label1.Location = new System.Drawing.Point(30, 70);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(26, 20);
+            this.label1.Size = new System.Drawing.Size(18, 13);
             this.label1.TabIndex = 5;
             this.label1.Text = "ID";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(46, 175);
+            this.label2.Location = new System.Drawing.Point(31, 114);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 20);
+            this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 7;
             this.label2.Text = "Nome";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(46, 245);
+            this.label3.Location = new System.Drawing.Point(31, 159);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 20);
+            this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 9;
             this.label3.Text = "Endereço";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(45, 310);
+            this.label4.Location = new System.Drawing.Point(30, 202);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 20);
+            this.label4.Size = new System.Drawing.Size(40, 13);
             this.label4.TabIndex = 11;
             this.label4.Text = "Cidade";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(46, 375);
+            this.label5.Location = new System.Drawing.Point(31, 244);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 20);
+            this.label5.Size = new System.Drawing.Size(49, 13);
             this.label5.TabIndex = 13;
             this.label5.Text = "Telefone";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(46, 436);
+            this.label6.Location = new System.Drawing.Point(31, 283);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 20);
+            this.label6.Size = new System.Drawing.Size(35, 13);
             this.label6.TabIndex = 15;
             this.label6.Text = "E-mail";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(46, 503);
+            this.label7.Location = new System.Drawing.Point(31, 327);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(44, 20);
+            this.label7.Size = new System.Drawing.Size(30, 13);
             this.label7.TabIndex = 17;
             this.label7.Text = "Data";
             // 
             // dtpFiltroData
             // 
-            this.dtpFiltroData.Location = new System.Drawing.Point(41, 527);
+            this.dtpFiltroData.Location = new System.Drawing.Point(27, 343);
+            this.dtpFiltroData.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtpFiltroData.Name = "dtpFiltroData";
-            this.dtpFiltroData.Size = new System.Drawing.Size(246, 26);
+            this.dtpFiltroData.Size = new System.Drawing.Size(165, 20);
             this.dtpFiltroData.TabIndex = 18;
             // 
             // btnLimpar
             // 
-            this.btnLimpar.Location = new System.Drawing.Point(656, 524);
+            this.btnLimpar.Location = new System.Drawing.Point(437, 341);
+            this.btnLimpar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLimpar.Name = "btnLimpar";
-            this.btnLimpar.Size = new System.Drawing.Size(114, 37);
+            this.btnLimpar.Size = new System.Drawing.Size(76, 24);
             this.btnLimpar.TabIndex = 20;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
@@ -148,9 +158,10 @@
             // 
             // btnConsultar
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(347, 524);
+            this.btnConsultar.Location = new System.Drawing.Point(231, 341);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(288, 37);
+            this.btnConsultar.Size = new System.Drawing.Size(192, 24);
             this.btnConsultar.TabIndex = 21;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
@@ -158,44 +169,50 @@
             // 
             // txtFiltroID
             // 
-            this.txtFiltroID.Location = new System.Drawing.Point(50, 130);
+            this.txtFiltroID.Location = new System.Drawing.Point(33, 84);
+            this.txtFiltroID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtFiltroID.Name = "txtFiltroID";
-            this.txtFiltroID.Size = new System.Drawing.Size(237, 26);
+            this.txtFiltroID.Size = new System.Drawing.Size(159, 20);
             this.txtFiltroID.TabIndex = 22;
             // 
             // txtFiltroNome
             // 
-            this.txtFiltroNome.Location = new System.Drawing.Point(49, 198);
+            this.txtFiltroNome.Location = new System.Drawing.Point(33, 129);
+            this.txtFiltroNome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtFiltroNome.Name = "txtFiltroNome";
-            this.txtFiltroNome.Size = new System.Drawing.Size(237, 26);
+            this.txtFiltroNome.Size = new System.Drawing.Size(159, 20);
             this.txtFiltroNome.TabIndex = 23;
             // 
             // txtFiltroEndereco
             // 
-            this.txtFiltroEndereco.Location = new System.Drawing.Point(50, 268);
+            this.txtFiltroEndereco.Location = new System.Drawing.Point(33, 174);
+            this.txtFiltroEndereco.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtFiltroEndereco.Name = "txtFiltroEndereco";
-            this.txtFiltroEndereco.Size = new System.Drawing.Size(237, 26);
+            this.txtFiltroEndereco.Size = new System.Drawing.Size(159, 20);
             this.txtFiltroEndereco.TabIndex = 24;
             // 
             // txtFiltroCidade
             // 
-            this.txtFiltroCidade.Location = new System.Drawing.Point(49, 333);
+            this.txtFiltroCidade.Location = new System.Drawing.Point(33, 216);
+            this.txtFiltroCidade.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtFiltroCidade.Name = "txtFiltroCidade";
-            this.txtFiltroCidade.Size = new System.Drawing.Size(237, 26);
+            this.txtFiltroCidade.Size = new System.Drawing.Size(159, 20);
             this.txtFiltroCidade.TabIndex = 25;
             // 
             // txtFiltroTelefone
             // 
-            this.txtFiltroTelefone.Location = new System.Drawing.Point(50, 398);
+            this.txtFiltroTelefone.Location = new System.Drawing.Point(33, 259);
+            this.txtFiltroTelefone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtFiltroTelefone.Name = "txtFiltroTelefone";
-            this.txtFiltroTelefone.Size = new System.Drawing.Size(237, 26);
+            this.txtFiltroTelefone.Size = new System.Drawing.Size(159, 20);
             this.txtFiltroTelefone.TabIndex = 26;
             // 
             // txtFiltroEmail
             // 
-            this.txtFiltroEmail.Location = new System.Drawing.Point(50, 459);
+            this.txtFiltroEmail.Location = new System.Drawing.Point(33, 298);
+            this.txtFiltroEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtFiltroEmail.Name = "txtFiltroEmail";
-            this.txtFiltroEmail.Size = new System.Drawing.Size(237, 26);
+            this.txtFiltroEmail.Size = new System.Drawing.Size(159, 20);
             this.txtFiltroEmail.TabIndex = 27;
             // 
             // dSPessoaBindingSource
@@ -221,6 +238,7 @@
             // dSPessoaDataGridView
             // 
             this.dSPessoaDataGridView.AutoGenerateColumns = false;
+            this.dSPessoaDataGridView.BackgroundColor = System.Drawing.Color.RosyBrown;
             this.dSPessoaDataGridView.ColumnHeadersHeight = 34;
             this.dSPessoaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -231,12 +249,13 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
             this.dSPessoaDataGridView.DataSource = this.dSPessoaBindingSource;
-            this.dSPessoaDataGridView.Location = new System.Drawing.Point(345, 107);
-            this.dSPessoaDataGridView.Margin = new System.Windows.Forms.Padding(3, 3, 75, 3);
+            this.dSPessoaDataGridView.GridColor = System.Drawing.Color.DarkRed;
+            this.dSPessoaDataGridView.Location = new System.Drawing.Point(230, 70);
+            this.dSPessoaDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 50, 2);
             this.dSPessoaDataGridView.Name = "dSPessoaDataGridView";
             this.dSPessoaDataGridView.RowHeadersWidth = 62;
             this.dSPessoaDataGridView.RowTemplate.Height = 28;
-            this.dSPessoaDataGridView.Size = new System.Drawing.Size(1114, 383);
+            this.dSPessoaDataGridView.Size = new System.Drawing.Size(743, 249);
             this.dSPessoaDataGridView.TabIndex = 27;
             // 
             // dataGridViewTextBoxColumn1
@@ -298,28 +317,32 @@
             // 
             // tsp1
             // 
+            this.tsp1.BackColor = System.Drawing.Color.MistyRose;
             this.tsp1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.tsp1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tstxtMenuPrincipal});
             this.tsp1.Location = new System.Drawing.Point(0, 0);
             this.tsp1.Name = "tsp1";
-            this.tsp1.Size = new System.Drawing.Size(1620, 31);
+            this.tsp1.Size = new System.Drawing.Size(1080, 25);
             this.tsp1.TabIndex = 28;
+            this.tsp1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.tsp1_ItemClicked);
             // 
             // tstxtMenuPrincipal
             // 
+            this.tstxtMenuPrincipal.BackColor = System.Drawing.Color.MistyRose;
             this.tstxtMenuPrincipal.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tstxtMenuPrincipal.Name = "tstxtMenuPrincipal";
-            this.tstxtMenuPrincipal.Size = new System.Drawing.Size(150, 38);
+            this.tstxtMenuPrincipal.ReadOnly = true;
+            this.tstxtMenuPrincipal.Size = new System.Drawing.Size(101, 25);
             this.tstxtMenuPrincipal.Text = "Menu Principal";
             // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1620, 659);
-            this.ControlBox = false;
+            this.BackColor = System.Drawing.Color.MistyRose;
+            this.ClientSize = new System.Drawing.Size(1080, 428);
             this.Controls.Add(this.tsp1);
             this.Controls.Add(this.dSPessoaDataGridView);
             this.Controls.Add(this.txtFiltroEmail);
@@ -338,6 +361,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.HelpButton = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form2";
             this.Text = "MDI_Consulta";
             this.Load += new System.EventHandler(this.Form2_Load);

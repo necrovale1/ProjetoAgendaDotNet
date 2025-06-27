@@ -22,14 +22,8 @@ namespace ProjetoAgendaDotNet
         {
             InitializeComponent();
 
-            // Atribui o DataSet recebido do menu ao componente DataSet deste formulário.
-            // 'this.dataSetPessoa' refere-se ao componente que você vê na barra inferior do designer do Form1.
-            this.dataSetPessoas = dsPessoas;
-
-            // Faz o TableAdapter deste formulário ser o mesmo do menu, garantindo que usem a mesma conexão.
-            this.dSPessoasTableAdapter = ta;
-
-            // Vincula o TableAdapter ao Manager para que o botão de Salvar funcione corretamente.
+            this.dataSetPessoa = dsPessoas;
+            this.dSPessoasTableAdapter = ta; // Garanta que o nome da variável de membro seja o plural
             this.tableAdapterManager.DSPessoasTableAdapter = this.dSPessoasTableAdapter;
         }
 

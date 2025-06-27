@@ -11,7 +11,7 @@ namespace ProjetoAgendaDotNet
     public partial class Form3 : Form
     {
         private DataSetPessoa dsPessoa;
-        private Dados.DataSetPessoaTableAdapters.DSPessoaTableAdapter dSPessoaTableAdapter;
+        private Dados.DataSetPessoaTableAdapters.DSPessoasTableAdapter dSPessoasTableAdapter; // Nome corrigido
 
         public Form3()
         {
@@ -19,20 +19,19 @@ namespace ProjetoAgendaDotNet
         }
 
 
-        public Form3(DataSetPessoa dataSet, Dados.DataSetPessoaTableAdapters.DSPessoaTableAdapter tableAdapter)
+        public Form3(DataSetPessoa dataSet, Dados.DataSetPessoaTableAdapters.DSPessoasTableAdapter tableAdapter) // Nome corrigido
         {
             InitializeComponent();
             this.dsPessoa = dataSet;
-            this.dSPessoaTableAdapter = tableAdapter;
+            this.dSPessoasTableAdapter = tableAdapter;
         }
-
         private void Form3_Load(object sender, EventArgs e)
         {
-            if (this.dsPessoa == null) return;
+            if (this.dsPessoas == null) return;
 
             // Vincula a fonte de dados que já foi carregada
-            dSPessoaBindingSource.DataSource = this.dsPessoa;
-            dSPessoaBindingSource.DataMember = "DSPessoa";
+            dSPessoaBindingSource.DataSource = this.dsPessoas;
+            dSPessoaBindingSource.DataMember = "DSPessoas";
 
             // Popula o ComboBox com as colunas que podem ser filtradas
             cmbColuna.Items.Clear();

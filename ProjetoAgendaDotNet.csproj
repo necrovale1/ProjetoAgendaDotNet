@@ -172,11 +172,11 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\chinaflag.png" />
-    <Content Include="AgendaDatabase.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <Content Include="bin\AgendaDatabase.mdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="AgendaDatabase_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <Content Include="bin\AgendaDatabase_log.ldf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>AgendaDatabase.mdf</DependentUpon>
     </Content>
     <Content Include="Resources\chinarap.wav" />

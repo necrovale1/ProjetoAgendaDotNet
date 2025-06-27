@@ -267,7 +267,7 @@
             this.dSPessoaBindingNavigatorSaveItem.Name = "dSPessoaBindingNavigatorSaveItem";
             this.dSPessoaBindingNavigatorSaveItem.Size = new System.Drawing.Size(34, 28);
             this.dSPessoaBindingNavigatorSaveItem.Text = "Save Data";
-            this.dSPessoaBindingNavigatorSaveItem.Click += new System.EventHandler(this.dSPessoaBindingNavigatorSaveItem_Click);
+            this.dSPessoaBindingNavigatorSaveItem.Click += new System.EventHandler(this.dSPessoasBindingNavigatorSaveItem_Click);
             // 
             // nomeTextBox
             // 

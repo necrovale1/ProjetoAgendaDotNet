@@ -24,8 +24,9 @@ namespace ProjetoAgendaDotNet
 
             // Inicializa os componentes de dados
             this.dataSetPessoa = new DataSetPessoa();
-            this.dSPessoaTableAdapter = new Dados.DataSetPessoaTableAdapters.DSPessoaTableAdapter();
+            this.dSPessoasTableAdapter = new Dados.DataSetPessoaTableAdapters.DSPessoasTableAdapter(); // Nome corrigido
         }
+
 
         private void MDI_Menu_Load(object sender, EventArgs e)
         {
@@ -35,7 +36,7 @@ namespace ProjetoAgendaDotNet
             // Carrega os dados do banco de dados de forma segura
             try
             {
-                this.dSPessoasTableAdapter.Fill(this.dataSetPessoa.DSPessoas);
+                this.dSPessoasTableAdapter.Fill(this.dataSetPessoa.DSPessoas); // Nome da tabela corrigido para DSPessoas
             }
             catch (Exception ex)
             {
@@ -46,10 +47,8 @@ namespace ProjetoAgendaDotNet
 
         private void pessoasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Abre o formulário de cadastro (Form1)
-            // Usa o construtor que passa os dados e o tableAdapter
-            Form1 form1 = new Form1(this.dataSetPessoa, this.dSPessoaTableAdapter);
-            form1.MdiParent = this; // Define que ele abrirá DENTRO do menu
+            Form1 form1 = new Form1(this.dataSetPessoa, this.dSPessoasTableAdapter); // Passando o objeto com nome correto
+            form1.MdiParent = this;
             form1.Show();
         }
 
@@ -64,7 +63,7 @@ namespace ProjetoAgendaDotNet
         private void relatoriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Abre o formulário de relatórios (Form3)
-            Form3 form3 = new Form3(this.dataSetPessoa, this.dSPessoaTableAdapter);
+            Form3 form3 = new Form3(this.dataSetPessoa, this.dSPessoasTableAdapter);
             form3.MdiParent = this; // Define que ele abrirá DENTRO do menu
             form3.Show();
         }

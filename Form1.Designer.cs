@@ -1,17 +1,9 @@
 ﻿namespace ProjetoAgendaDotNet
 {
-    //MDI_PESSOAS
     partial class Form1
     {
-        /// <summary>
-        /// Variável de designer necessária.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Limpar os recursos que estão sendo usados.
-        /// </summary>
-        /// <param name="disposing">true se for necessário descartar os recursos gerenciados; caso contrário, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -21,27 +13,24 @@
             base.Dispose(disposing);
         }
 
-        #region Código gerado pelo Windows Form Designer
+        #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Método necessário para suporte ao Designer - não modifique 
-        /// o conteúdo deste método com o editor de código.
-        /// </summary>
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label lblNome;
-            System.Windows.Forms.Label lblEndereco;
-            System.Windows.Forms.Label lblCidade;
-            System.Windows.Forms.Label lblEmail;
-            System.Windows.Forms.Label lblDataNasc;
-            System.Windows.Forms.Label lblID;
-            System.Windows.Forms.Label lblTelefone;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.nomeLabel = new System.Windows.Forms.Label();
+            this.enderecoLabel = new System.Windows.Forms.Label();
+            this.cidadeLabel = new System.Windows.Forms.Label();
+            this.emailLabel = new System.Windows.Forms.Label();
+            this.dataNascLabel = new System.Windows.Forms.Label();
+            this.telefoneLabel = new System.Windows.Forms.Label();
+            this.dataSetPessoa = new ProjetoAgendaDotNet.Dados.DataSetPessoa();
+            this.dSPessoaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dSPessoaTableAdapter = new ProjetoAgendaDotNet.Dados.DataSetPessoaTableAdapters.DSPessoaTableAdapter();
+            this.tableAdapterManager = new ProjetoAgendaDotNet.Dados.DataSetPessoaTableAdapters.TableAdapterManager();
             this.dSPessoaBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.dSPessoaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetPessoa = new ProjetoAgendaDotNet.Dados.DataSetPessoa();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -52,118 +41,109 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.dSPessoaBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.txbNome = new System.Windows.Forms.TextBox();
-            this.txbEndereco = new System.Windows.Forms.TextBox();
-            this.txbCidade = new System.Windows.Forms.TextBox();
-            this.txbEmail = new System.Windows.Forms.TextBox();
-            this.dtpData = new System.Windows.Forms.DateTimePicker();
-            this.iDTextBox = new System.Windows.Forms.TextBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.menuPriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dSPessoaTableAdapter = new ProjetoAgendaDotNet.Dados.DataSetPessoaTableAdapters.DSPessoaTableAdapter();
-            this.tableAdapterManager = new ProjetoAgendaDotNet.Dados.DataSetPessoaTableAdapters.TableAdapterManager();
+            this.nomeTextBox = new System.Windows.Forms.TextBox();
+            this.enderecoTextBox = new System.Windows.Forms.TextBox();
+            this.cidadeTextBox = new System.Windows.Forms.TextBox();
+            this.emailTextBox = new System.Windows.Forms.TextBox();
+            this.dataNascDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.telefoneTextBox = new System.Windows.Forms.TextBox();
             this.dSPessoaDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txbTelefone = new System.Windows.Forms.TextBox();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            lblNome = new System.Windows.Forms.Label();
-            lblEndereco = new System.Windows.Forms.Label();
-            lblCidade = new System.Windows.Forms.Label();
-            lblEmail = new System.Windows.Forms.Label();
-            lblDataNasc = new System.Windows.Forms.Label();
-            lblID = new System.Windows.Forms.Label();
-            lblTelefone = new System.Windows.Forms.Label();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetPessoa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSPessoaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSPessoaBindingNavigator)).BeginInit();
             this.dSPessoaBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dSPessoaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetPessoa)).BeginInit();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dSPessoaDataGridView)).BeginInit();
-            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblNome
+            // nomeLabel
             // 
-            lblNome.AutoSize = true;
-            lblNome.Location = new System.Drawing.Point(41, 91);
-            lblNome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            lblNome.Name = "lblNome";
-            lblNome.Size = new System.Drawing.Size(38, 13);
-            lblNome.TabIndex = 3;
-            lblNome.Text = "Nome:";
+            this.nomeLabel.AutoSize = true;
+            this.nomeLabel.Location = new System.Drawing.Point(39, 77);
+            this.nomeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.nomeLabel.Name = "nomeLabel";
+            this.nomeLabel.Size = new System.Drawing.Size(55, 20);
+            this.nomeLabel.TabIndex = 3;
+            this.nomeLabel.Text = "Nome:";
             // 
-            // lblEndereco
+            // enderecoLabel
             // 
-            lblEndereco.AutoSize = true;
-            lblEndereco.Location = new System.Drawing.Point(41, 112);
-            lblEndereco.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            lblEndereco.Name = "lblEndereco";
-            lblEndereco.Size = new System.Drawing.Size(56, 13);
-            lblEndereco.TabIndex = 5;
-            lblEndereco.Text = "Endereco:";
+            this.enderecoLabel.AutoSize = true;
+            this.enderecoLabel.Location = new System.Drawing.Point(39, 117);
+            this.enderecoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.enderecoLabel.Name = "enderecoLabel";
+            this.enderecoLabel.Size = new System.Drawing.Size(82, 20);
+            this.enderecoLabel.TabIndex = 5;
+            this.enderecoLabel.Text = "Endereco:";
             // 
-            // lblCidade
+            // cidadeLabel
             // 
-            lblCidade.AutoSize = true;
-            lblCidade.Location = new System.Drawing.Point(41, 133);
-            lblCidade.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            lblCidade.Name = "lblCidade";
-            lblCidade.Size = new System.Drawing.Size(43, 13);
-            lblCidade.TabIndex = 7;
-            lblCidade.Text = "Cidade:";
+            this.cidadeLabel.AutoSize = true;
+            this.cidadeLabel.Location = new System.Drawing.Point(39, 157);
+            this.cidadeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.cidadeLabel.Name = "cidadeLabel";
+            this.cidadeLabel.Size = new System.Drawing.Size(63, 20);
+            this.cidadeLabel.TabIndex = 7;
+            this.cidadeLabel.Text = "Cidade:";
             // 
-            // lblEmail
+            // emailLabel
             // 
-            lblEmail.AutoSize = true;
-            lblEmail.Location = new System.Drawing.Point(41, 153);
-            lblEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            lblEmail.Name = "lblEmail";
-            lblEmail.Size = new System.Drawing.Size(35, 13);
-            lblEmail.TabIndex = 9;
-            lblEmail.Text = "Email:";
+            this.emailLabel.AutoSize = true;
+            this.emailLabel.Location = new System.Drawing.Point(39, 197);
+            this.emailLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.emailLabel.Name = "emailLabel";
+            this.emailLabel.Size = new System.Drawing.Size(52, 20);
+            this.emailLabel.TabIndex = 9;
+            this.emailLabel.Text = "Email:";
             // 
-            // lblDataNasc
+            // dataNascLabel
             // 
-            lblDataNasc.AutoSize = true;
-            lblDataNasc.Location = new System.Drawing.Point(41, 199);
-            lblDataNasc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            lblDataNasc.Name = "lblDataNasc";
-            lblDataNasc.Size = new System.Drawing.Size(61, 13);
-            lblDataNasc.TabIndex = 11;
-            lblDataNasc.Text = "Data Nasc:";
+            this.dataNascLabel.AutoSize = true;
+            this.dataNascLabel.Location = new System.Drawing.Point(39, 238);
+            this.dataNascLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.dataNascLabel.Name = "dataNascLabel";
+            this.dataNascLabel.Size = new System.Drawing.Size(88, 20);
+            this.dataNascLabel.TabIndex = 11;
+            this.dataNascLabel.Text = "Data Nasc:";
             // 
-            // lblID
+            // telefoneLabel
             // 
-            lblID.AutoSize = true;
-            lblID.Location = new System.Drawing.Point(41, 70);
-            lblID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            lblID.Name = "lblID";
-            lblID.Size = new System.Drawing.Size(21, 13);
-            lblID.TabIndex = 1;
-            lblID.Text = "ID:";
+            this.telefoneLabel.AutoSize = true;
+            this.telefoneLabel.Location = new System.Drawing.Point(39, 277);
+            this.telefoneLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.telefoneLabel.Name = "telefoneLabel";
+            this.telefoneLabel.Size = new System.Drawing.Size(75, 20);
+            this.telefoneLabel.TabIndex = 13;
+            this.telefoneLabel.Text = "Telefone:";
             // 
-            // lblTelefone
+            // dataSetPessoa
             // 
-            lblTelefone.AutoSize = true;
-            lblTelefone.Location = new System.Drawing.Point(41, 177);
-            lblTelefone.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            lblTelefone.Name = "lblTelefone";
-            lblTelefone.Size = new System.Drawing.Size(52, 13);
-            lblTelefone.TabIndex = 15;
-            lblTelefone.Text = "Telefone:";
+            this.dataSetPessoa.DataSetName = "DataSetPessoa";
+            this.dataSetPessoa.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dSPessoaBindingSource
+            // 
+            this.dSPessoaBindingSource.DataMember = "DSPessoa";
+            this.dSPessoaBindingSource.DataSource = this.dataSetPessoa;
+            // 
+            // dSPessoaTableAdapter
+            // 
+            this.dSPessoaTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.Connection = null;
+            this.tableAdapterManager.DSPessoaTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = ProjetoAgendaDotNet.Dados.DataSetPessoaTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // dSPessoaBindingNavigator
             // 
             this.dSPessoaBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.dSPessoaBindingNavigator.BackColor = System.Drawing.Color.MistyRose;
             this.dSPessoaBindingNavigator.BindingSource = this.dSPessoaBindingSource;
             this.dSPessoaBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.dSPessoaBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
@@ -178,18 +158,18 @@
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
-            this.toolStripButton1,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.dSPessoaBindingNavigatorSaveItem});
-            this.dSPessoaBindingNavigator.Location = new System.Drawing.Point(0, 24);
+            this.dSPessoaBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.dSPessoaBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.dSPessoaBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.dSPessoaBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.dSPessoaBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.dSPessoaBindingNavigator.Name = "dSPessoaBindingNavigator";
+            this.dSPessoaBindingNavigator.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.dSPessoaBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.dSPessoaBindingNavigator.Size = new System.Drawing.Size(1125, 31);
+            this.dSPessoaBindingNavigator.Size = new System.Drawing.Size(1585, 33);
             this.dSPessoaBindingNavigator.TabIndex = 0;
             this.dSPessoaBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -199,25 +179,15 @@
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(28, 28);
-            this.bindingNavigatorAddNewItem.Text = "Adicionar novo";
-            // 
-            // dSPessoaBindingSource
-            // 
-            this.dSPessoaBindingSource.DataMember = "DSPessoa";
-            this.dSPessoaBindingSource.DataSource = this.dataSetPessoa;
-            // 
-            // dataSetPessoa
-            // 
-            this.dataSetPessoa.DataSetName = "DataSetPessoa";
-            this.dataSetPessoa.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(34, 28);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 28);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Número total de itens";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(57, 28);
+            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
             // bindingNavigatorDeleteItem
             // 
@@ -225,8 +195,8 @@
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(28, 28);
-            this.bindingNavigatorDeleteItem.Text = "Excluir";
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(34, 28);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
             this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorMoveFirstItem
@@ -235,8 +205,8 @@
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(28, 28);
-            this.bindingNavigatorMoveFirstItem.Text = "Mover primeiro";
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(34, 28);
+            this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousItem
             // 
@@ -244,29 +214,28 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(28, 28);
-            this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(34, 28);
+            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 33);
             // 
             // bindingNavigatorPositionItem
             // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Posição";
+            this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.BackColor = System.Drawing.Color.MistyRose;
             this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(35, 23);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(73, 31);
             this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Posição atual";
+            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 33);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -274,8 +243,8 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(28, 28);
-            this.bindingNavigatorMoveNextItem.Text = "Mover próximo";
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(34, 28);
+            this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
             // 
@@ -283,267 +252,162 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(28, 28);
-            this.bindingNavigatorMoveLastItem.Text = "Mover último";
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(34, 28);
+            this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(28, 28);
-            this.toolStripButton1.Text = "toolStripButton1";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 33);
             // 
             // dSPessoaBindingNavigatorSaveItem
             // 
             this.dSPessoaBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.dSPessoaBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("dSPessoaBindingNavigatorSaveItem.Image")));
             this.dSPessoaBindingNavigatorSaveItem.Name = "dSPessoaBindingNavigatorSaveItem";
-            this.dSPessoaBindingNavigatorSaveItem.Size = new System.Drawing.Size(28, 28);
-            this.dSPessoaBindingNavigatorSaveItem.Text = "Salvar Dados";
+            this.dSPessoaBindingNavigatorSaveItem.Size = new System.Drawing.Size(34, 28);
+            this.dSPessoaBindingNavigatorSaveItem.Text = "Save Data";
             this.dSPessoaBindingNavigatorSaveItem.Click += new System.EventHandler(this.dSPessoaBindingNavigatorSaveItem_Click);
             // 
-            // txbNome
+            // nomeTextBox
             // 
-            this.txbNome.BackColor = System.Drawing.Color.MistyRose;
-            this.txbNome.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dSPessoaBindingSource, "Nome", true));
-            this.txbNome.Location = new System.Drawing.Point(103, 89);
-            this.txbNome.Margin = new System.Windows.Forms.Padding(2);
-            this.txbNome.Name = "txbNome";
-            this.txbNome.Size = new System.Drawing.Size(135, 20);
-            this.txbNome.TabIndex = 4;
+            this.nomeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dSPessoaBindingSource, "Nome", true));
+            this.nomeTextBox.Location = new System.Drawing.Point(140, 72);
+            this.nomeTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.nomeTextBox.Name = "nomeTextBox";
+            this.nomeTextBox.Size = new System.Drawing.Size(436, 26);
+            this.nomeTextBox.TabIndex = 4;
             // 
-            // txbEndereco
+            // enderecoTextBox
             // 
-            this.txbEndereco.BackColor = System.Drawing.Color.MistyRose;
-            this.txbEndereco.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dSPessoaBindingSource, "Endereco", true));
-            this.txbEndereco.Location = new System.Drawing.Point(103, 110);
-            this.txbEndereco.Margin = new System.Windows.Forms.Padding(2);
-            this.txbEndereco.Name = "txbEndereco";
-            this.txbEndereco.Size = new System.Drawing.Size(135, 20);
-            this.txbEndereco.TabIndex = 6;
+            this.enderecoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dSPessoaBindingSource, "Endereco", true));
+            this.enderecoTextBox.Location = new System.Drawing.Point(140, 112);
+            this.enderecoTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.enderecoTextBox.Name = "enderecoTextBox";
+            this.enderecoTextBox.Size = new System.Drawing.Size(436, 26);
+            this.enderecoTextBox.TabIndex = 6;
             // 
-            // txbCidade
+            // cidadeTextBox
             // 
-            this.txbCidade.BackColor = System.Drawing.Color.MistyRose;
-            this.txbCidade.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dSPessoaBindingSource, "Cidade", true));
-            this.txbCidade.Location = new System.Drawing.Point(103, 131);
-            this.txbCidade.Margin = new System.Windows.Forms.Padding(2);
-            this.txbCidade.Name = "txbCidade";
-            this.txbCidade.Size = new System.Drawing.Size(135, 20);
-            this.txbCidade.TabIndex = 8;
+            this.cidadeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dSPessoaBindingSource, "Cidade", true));
+            this.cidadeTextBox.Location = new System.Drawing.Point(140, 152);
+            this.cidadeTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cidadeTextBox.Name = "cidadeTextBox";
+            this.cidadeTextBox.Size = new System.Drawing.Size(436, 26);
+            this.cidadeTextBox.TabIndex = 8;
             // 
-            // txbEmail
+            // emailTextBox
             // 
-            this.txbEmail.BackColor = System.Drawing.Color.MistyRose;
-            this.txbEmail.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dSPessoaBindingSource, "Email", true));
-            this.txbEmail.Location = new System.Drawing.Point(103, 151);
-            this.txbEmail.Margin = new System.Windows.Forms.Padding(2);
-            this.txbEmail.Name = "txbEmail";
-            this.txbEmail.Size = new System.Drawing.Size(135, 20);
-            this.txbEmail.TabIndex = 10;
+            this.emailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dSPessoaBindingSource, "Email", true));
+            this.emailTextBox.Location = new System.Drawing.Point(140, 192);
+            this.emailTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.emailTextBox.Name = "emailTextBox";
+            this.emailTextBox.Size = new System.Drawing.Size(436, 26);
+            this.emailTextBox.TabIndex = 10;
             // 
-            // dtpData
+            // dataNascDateTimePicker
             // 
-            this.dtpData.CalendarForeColor = System.Drawing.Color.MistyRose;
-            this.dtpData.CalendarMonthBackground = System.Drawing.Color.MistyRose;
-            this.dtpData.CalendarTitleBackColor = System.Drawing.Color.MistyRose;
-            this.dtpData.CalendarTitleForeColor = System.Drawing.Color.Red;
-            this.dtpData.CalendarTrailingForeColor = System.Drawing.Color.MistyRose;
-            this.dtpData.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.dSPessoaBindingSource, "DataNasc", true));
-            this.dtpData.Location = new System.Drawing.Point(103, 196);
-            this.dtpData.Margin = new System.Windows.Forms.Padding(2);
-            this.dtpData.Name = "dtpData";
-            this.dtpData.Size = new System.Drawing.Size(135, 20);
-            this.dtpData.TabIndex = 12;
+            this.dataNascDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.dSPessoaBindingSource, "DataNasc", true));
+            this.dataNascDateTimePicker.Location = new System.Drawing.Point(140, 232);
+            this.dataNascDateTimePicker.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dataNascDateTimePicker.Name = "dataNascDateTimePicker";
+            this.dataNascDateTimePicker.Size = new System.Drawing.Size(436, 26);
+            this.dataNascDateTimePicker.TabIndex = 12;
             // 
-            // iDTextBox
+            // telefoneTextBox
             // 
-            this.iDTextBox.BackColor = System.Drawing.Color.MistyRose;
-            this.iDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dSPessoaBindingSource, "ID", true));
-            this.iDTextBox.Enabled = false;
-            this.iDTextBox.Location = new System.Drawing.Point(103, 68);
-            this.iDTextBox.Margin = new System.Windows.Forms.Padding(2);
-            this.iDTextBox.Name = "iDTextBox";
-            this.iDTextBox.ReadOnly = true;
-            this.iDTextBox.Size = new System.Drawing.Size(135, 20);
-            this.iDTextBox.TabIndex = 2;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.Color.MistyRose;
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuPriToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(1125, 24);
-            this.menuStrip1.TabIndex = 14;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // menuPriToolStripMenuItem
-            // 
-            this.menuPriToolStripMenuItem.Name = "menuPriToolStripMenuItem";
-            this.menuPriToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
-            this.menuPriToolStripMenuItem.Text = "Menu Principal";
-            this.menuPriToolStripMenuItem.Click += new System.EventHandler(this.menuPriToolStripMenuItem_Click);
-            // 
-            // dSPessoaTableAdapter
-            // 
-            this.dSPessoaTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.DSPessoaTableAdapter = this.dSPessoaTableAdapter;
-            this.tableAdapterManager.UpdateOrder = ProjetoAgendaDotNet.Dados.DataSetPessoaTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.telefoneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dSPessoaBindingSource, "Telefone", true));
+            this.telefoneTextBox.Location = new System.Drawing.Point(140, 272);
+            this.telefoneTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.telefoneTextBox.Name = "telefoneTextBox";
+            this.telefoneTextBox.Size = new System.Drawing.Size(436, 26);
+            this.telefoneTextBox.TabIndex = 14;
             // 
             // dSPessoaDataGridView
             // 
+            this.dSPessoaDataGridView.AllowUserToAddRows = false;
+            this.dSPessoaDataGridView.AllowUserToDeleteRows = false;
             this.dSPessoaDataGridView.AutoGenerateColumns = false;
-            this.dSPessoaDataGridView.BackgroundColor = System.Drawing.Color.RosyBrown;
             this.dSPessoaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dSPessoaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6});
+            this.nomeDataGridViewTextBoxColumn,
+            this.cidadeDataGridViewTextBoxColumn,
+            this.emailDataGridViewTextBoxColumn,
+            this.telefoneDataGridViewTextBoxColumn});
             this.dSPessoaDataGridView.DataSource = this.dSPessoaBindingSource;
-            this.dSPessoaDataGridView.GridColor = System.Drawing.Color.Firebrick;
-            this.dSPessoaDataGridView.Location = new System.Drawing.Point(289, 62);
-            this.dSPessoaDataGridView.Margin = new System.Windows.Forms.Padding(2);
+            this.dSPessoaDataGridView.Location = new System.Drawing.Point(654, 38);
+            this.dSPessoaDataGridView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dSPessoaDataGridView.Name = "dSPessoaDataGridView";
+            this.dSPessoaDataGridView.ReadOnly = true;
             this.dSPessoaDataGridView.RowHeadersWidth = 62;
-            this.dSPessoaDataGridView.RowTemplate.Height = 28;
-            this.dSPessoaDataGridView.Size = new System.Drawing.Size(751, 143);
-            this.dSPessoaDataGridView.TabIndex = 14;
-            this.dSPessoaDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dSPessoaDataGridView_CellContentClick);
+            this.dSPessoaDataGridView.Size = new System.Drawing.Size(535, 291);
+            this.dSPessoaDataGridView.TabIndex = 15;
             // 
-            // dataGridViewTextBoxColumn1
+            // nomeDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 150;
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nomeDataGridViewTextBoxColumn.Width = 250;
             // 
-            // dataGridViewTextBoxColumn2
+            // cidadeDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nome";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nome";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 150;
+            this.cidadeDataGridViewTextBoxColumn.DataPropertyName = "Cidade";
+            this.cidadeDataGridViewTextBoxColumn.HeaderText = "Cidade";
+            this.cidadeDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.cidadeDataGridViewTextBoxColumn.Name = "cidadeDataGridViewTextBoxColumn";
+            this.cidadeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cidadeDataGridViewTextBoxColumn.Width = 150;
             // 
-            // dataGridViewTextBoxColumn3
+            // emailDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Endereco";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Endereco";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 150;
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            this.emailDataGridViewTextBoxColumn.Width = 200;
             // 
-            // dataGridViewTextBoxColumn4
+            // telefoneDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Cidade";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Cidade";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Email";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Email";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "DataNasc";
-            this.dataGridViewTextBoxColumn6.HeaderText = "DataNasc";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 8;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 150;
-            // 
-            // txbTelefone
-            // 
-            this.txbTelefone.BackColor = System.Drawing.Color.MistyRose;
-            this.txbTelefone.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dSPessoaBindingSource, "Email", true));
-            this.txbTelefone.Location = new System.Drawing.Point(103, 176);
-            this.txbTelefone.Margin = new System.Windows.Forms.Padding(2);
-            this.txbTelefone.Name = "txbTelefone";
-            this.txbTelefone.Size = new System.Drawing.Size(135, 20);
-            this.txbTelefone.TabIndex = 16;
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.BackColor = System.Drawing.Color.MistyRose;
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 228);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1125, 22);
-            this.statusStrip1.TabIndex = 17;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(12, 17);
-            this.toolStripStatusLabel1.Text = "-";
+            this.telefoneDataGridViewTextBoxColumn.DataPropertyName = "Telefone";
+            this.telefoneDataGridViewTextBoxColumn.HeaderText = "Telefone";
+            this.telefoneDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.telefoneDataGridViewTextBoxColumn.Name = "telefoneDataGridViewTextBoxColumn";
+            this.telefoneDataGridViewTextBoxColumn.ReadOnly = true;
+            this.telefoneDataGridViewTextBoxColumn.Width = 150;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.MistyRose;
-            this.ClientSize = new System.Drawing.Size(1125, 250);
+            this.ClientSize = new System.Drawing.Size(1585, 325);
             this.Controls.Add(this.dSPessoaDataGridView);
-            this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(lblTelefone);
-            this.Controls.Add(this.txbTelefone);
-            this.Controls.Add(lblID);
-            this.Controls.Add(this.iDTextBox);
-            this.Controls.Add(lblNome);
-            this.Controls.Add(this.txbNome);
-            this.Controls.Add(lblEndereco);
-            this.Controls.Add(this.txbEndereco);
-            this.Controls.Add(lblCidade);
-            this.Controls.Add(this.txbCidade);
-            this.Controls.Add(lblEmail);
-            this.Controls.Add(this.txbEmail);
-            this.Controls.Add(lblDataNasc);
-            this.Controls.Add(this.dtpData);
+            this.Controls.Add(this.nomeLabel);
+            this.Controls.Add(this.nomeTextBox);
+            this.Controls.Add(this.enderecoLabel);
+            this.Controls.Add(this.enderecoTextBox);
+            this.Controls.Add(this.cidadeLabel);
+            this.Controls.Add(this.cidadeTextBox);
+            this.Controls.Add(this.emailLabel);
+            this.Controls.Add(this.emailTextBox);
+            this.Controls.Add(this.dataNascLabel);
+            this.Controls.Add(this.dataNascDateTimePicker);
+            this.Controls.Add(this.telefoneLabel);
+            this.Controls.Add(this.telefoneTextBox);
             this.Controls.Add(this.dSPessoaBindingNavigator);
-            this.Controls.Add(this.menuStrip1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
-            this.Text = "MDI_Pessoas";
+            this.Text = "Cadastro de Pessoas";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetPessoa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSPessoaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSPessoaBindingNavigator)).EndInit();
             this.dSPessoaBindingNavigator.ResumeLayout(false);
             this.dSPessoaBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dSPessoaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetPessoa)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dSPessoaDataGridView)).EndInit();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -568,25 +432,22 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton dSPessoaBindingNavigatorSaveItem;
-        private System.Windows.Forms.TextBox txbNome;
-        private System.Windows.Forms.TextBox txbEndereco;
-        private System.Windows.Forms.TextBox txbCidade;
-        private System.Windows.Forms.TextBox txbEmail;
-        private System.Windows.Forms.DateTimePicker dtpData;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.TextBox iDTextBox;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem menuPriToolStripMenuItem;
+        private System.Windows.Forms.TextBox nomeTextBox;
+        private System.Windows.Forms.TextBox enderecoTextBox;
+        private System.Windows.Forms.TextBox cidadeTextBox;
+        private System.Windows.Forms.TextBox emailTextBox;
+        private System.Windows.Forms.DateTimePicker dataNascDateTimePicker;
+        private System.Windows.Forms.TextBox telefoneTextBox;
+        private System.Windows.Forms.Label nomeLabel;
+        private System.Windows.Forms.Label enderecoLabel;
+        private System.Windows.Forms.Label cidadeLabel;
+        private System.Windows.Forms.Label emailLabel;
+        private System.Windows.Forms.Label dataNascLabel;
+        private System.Windows.Forms.Label telefoneLabel;
         private System.Windows.Forms.DataGridView dSPessoaDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.TextBox txbTelefone;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cidadeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefoneDataGridViewTextBoxColumn;
     }
 }
-

@@ -7,38 +7,65 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProjetoAgendaDotNet.Dados; // Essencial para reconhecer o DataSetPessoa
 
 namespace ProjetoAgendaDotNet
 {
     public partial class MDI_Menu : Form
     {
+        // Declaração dos componentes de dados para serem usados por todo o MDI
+        private DataSetPessoa dataSetPessoa;
+        private Dados.DataSetPessoaTableAdapters.DSPessoaTableAdapter dSPessoaTableAdapter;
+
         public MDI_Menu()
         {
             InitializeComponent();
             this.IsMdiContainer = true;
+
+            // Inicializa os componentes de dados
+            this.dataSetPessoa = new DataSetPessoa();
+            this.dSPessoaTableAdapter = new Dados.DataSetPessoaTableAdapters.DSPessoaTableAdapter();
+        }
+
+        private void MDI_Menu_Load(object sender, EventArgs e)
+        {
+            // Maximiza a janela principal
+            this.WindowState = FormWindowState.Maximized;
+
+            // Carrega os dados do banco de dados de forma segura
+            try
+            {
+                this.dSPessoaTableAdapter.Fill(this.dataSetPessoa.DSPessoa);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Falha crítica ao conectar com o banco de dados. Verifique o App.config e a conexão.\n\nErro: " + ex.Message, "Erro de Conexão", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit(); // Fecha o programa se não conseguir carregar os dados
+            }
         }
 
         private void pessoasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Abre o formulário de cadastro de pessoas como filho do MDI
-            Form1 form1 = new Form1();
-            form1.MdiParent = this;
+            // Abre o formulário de cadastro (Form1)
+            // Usa o construtor que passa os dados e o tableAdapter
+            Form1 form1 = new Form1(this.dataSetPessoa, this.dSPessoaTableAdapter);
+            form1.MdiParent = this; // Define que ele abrirá DENTRO do menu
             form1.Show();
         }
 
         private void pessoasToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            // Abre o formulário de consulta de pessoas como filho do MDI
-            Form2 form2 = new Form2();
-            form2.MdiParent = this;
+            // Abre o formulário de consulta (Form2)
+            Form2 form2 = new Form2(this.dataSetPessoa);
+            form2.MdiParent = this; // Define que ele abrirá DENTRO do menu
             form2.Show();
         }
 
         private void relatoriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Abre o formulário de relatórios como filho do MDI
-            Form3 form3 = new Form3();
-            form3.MdiParent = this;
+            // Abre o formulário de relatórios (Form3)
+            Form3 form3 = new Form3(this.dataSetPessoa, this.dSPessoaTableAdapter);
+            form3.MdiParent = this; // Define que ele abrirá DENTRO do menu
             form3.Show();
         }
 
@@ -47,14 +74,8 @@ namespace ProjetoAgendaDotNet
             DialogResult resultado = MessageBox.Show("Deseja realmente sair do sistema?", "Confirmar Saída", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (resultado == DialogResult.Yes)
             {
-                this.Close(); // Fecha o formulário MDI e encerra a aplicação
+                Application.Exit(); // Encerra a aplicação
             }
-        }
-
-        private void MDI_Menu_Load(object sender, EventArgs e)
-        {
-            // Maximiza a janela principal para melhor visualização
-            this.WindowState = FormWindowState.Maximized;
         }
     }
 }

@@ -22,8 +22,20 @@ namespace ProjetoAgendaDotNet
                 splash.ShowDialog();
             }
 
-            // Run main application
-            Application.Run(new FrmLogin()); // Replace FrmMain with your main form class
+            // Cria o formulário de login
+            FrmLogin loginForm = new FrmLogin();
+
+            // Mostra o formulário de login como uma caixa de diálogo.
+            // O código vai pausar aqui até o loginForm ser fechado.
+            if (loginForm.ShowDialog() == DialogResult.OK)
+            {
+                // Se o DialogResult for OK (login bem-sucedido),
+                // então abre o menu principal.
+                // A aplicação continuará rodando até o MDI_Menu ser fechado.
+                Application.Run(new MDI_Menu());
+            }
+            // Se o DialogResult for qualquer outra coisa (Cancel, etc.),
+            // o método Main() termina e a aplicação fecha, o que é o comportamento desejado.
         }
     }
 }

@@ -1,39 +1,28 @@
 ﻿using System;
 using System.Windows.Forms;
+using ProjetoAgendaDotNet.Dados;
 
 namespace ProjetoAgendaDotNet
 {
     public partial class Form1 : Form
     {
+        // O Designer agora gerencia as variáveis 'dataSetPessoa' e 'dSPessoaTableAdapter'
+
+        // Construtor padrão (usado pelo designer)
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        // Construtor que recebe os dados do MDI_Menu
+        public Form1(DataSetPessoa dsPessoa, Dados.DataSetPessoaTableAdapters.DSPessoaTableAdapter ta)
         {
-            try
-            {
-                // O TableAdapter usa a conexão do App.config para preencher os dados da tabela 'Pessoas'.
-                int registrosCarregados = this.dSPessoaTableAdapter.Fill(this.dataSetPessoa.DSPessoa);
+            InitializeComponent();
 
-                toolStripStatusLabel1.Text = "Conectado ao banco de dados local.";
-
-                // ***** LINHA DE DIAGNÓSTICO ADICIONADA *****
-                // Esta mensagem irá nos dizer exatamente quantos registros foram lidos do banco.
-                MessageBox.Show($"Diagnóstico: {registrosCarregados} registros foram carregados da tabela 'Pessoas'.",
-                                "Verificação de Dados",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Falha ao carregar os dados da tabela 'Pessoas'.\n\n" +
-                                $"Erro: {ex.Message}",
-                                "Erro de Carregamento",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
-            }
+            // Faz o formulário usar os componentes de dados que vieram do MDI_Menu
+            this.dataSetPessoa = dsPessoa;
+            this.dSPessoaTableAdapter.Connection = ta.Connection; // Usa a mesma conexão
+            this.tableAdapterManager.DSPessoaTableAdapter = this.dSPessoaTableAdapter;
         }
 
         private void dSPessoaBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -43,75 +32,46 @@ namespace ProjetoAgendaDotNet
                 this.Validate();
                 this.dSPessoaBindingSource.EndEdit();
                 this.tableAdapterManager.UpdateAll(this.dataSetPessoa);
-                MessageBox.Show("Dados salvos com sucesso!", "Sucesso",
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Dados salvos com sucesso!", "Sucesso");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao salvar os dados.\n\n" +
-                                $"Erro: {ex.Message}",
-                                "Erro de Salvamento",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
+                MessageBox.Show("Falha ao salvar os dados. Erro: " + ex.Message, "Erro");
             }
         }
 
-        // ***** MÉTODO RESTAURADO *****
-        // Lógica para o botão de excluir no BindingNavigator
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // Vincula os dados já carregados aos controles do formulário
+            // O BindingSource já está configurado no designer para usar o dataSetPessoa
+            this.dSPessoaBindingSource.DataSource = this.dataSetPessoa.DSPessoa;
+        }
+
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
-            if (dSPessoaBindingSource.Current == null)
+            // Verifica se existe algum registro para ser excluído
+            if (dSPessoaBindingSource.Count == 0)
             {
-                MessageBox.Show("Não há registro selecionado para excluir.", "Aviso",
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Não há registros para excluir.", "Aviso");
                 return;
             }
 
-            var confirmResult = MessageBox.Show("Deseja realmente excluir este registro?", "Confirmar Exclusão",
-                                                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            // Cria a caixa de diálogo de confirmação
+            DialogResult resultado = MessageBox.Show(
+                "Tem certeza que deseja excluir este registro permanentemente?",
+                "Confirmar Exclusão",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
 
-            if (confirmResult == DialogResult.Yes)
+            // Se o usuário clicar em "Sim", o registro é removido
+            if (resultado == DialogResult.Yes)
             {
-                try
-                {
-                    dSPessoaBindingSource.RemoveCurrent();
-                    // Após remover da tela, salva a alteração no banco de dados
-                    dSPessoaBindingNavigatorSaveItem_Click(sender, e);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Erro ao tentar excluir o registro.\n\n" + ex.Message, "Erro",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    // Se deu erro, recarrega os dados para desfazer a exclusão na tela
-                    btnRecarregar_Click(sender, e);
-                }
+                dSPessoaBindingSource.RemoveCurrent();
+                MessageBox.Show("Registro excluído. Clique em 'Salvar' para confirmar a remoção no banco de dados.", "Excluído");
             }
+            // Se clicar em "Não", nada acontece.
         }
 
-        // ***** MÉTODO RESTAURADO *****
-        // Lógica para o item de menu "Menu Principal"
-        private void menuPriToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close(); // A forma correta de fechar um formulário filho em MDI
-        }
-
-        private void btnRecarregar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.dataSetPessoa.DSPessoa.Clear();
-                this.dSPessoaTableAdapter.Fill(this.dataSetPessoa.DSPessoa);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Falha ao recarregar os dados: " + ex.Message, "Erro",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void dSPessoaDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

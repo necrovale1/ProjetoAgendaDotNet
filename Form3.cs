@@ -1,97 +1,161 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Text;
+using System.Linq;
+using ProjetoAgendaDotNet.Dados;
 
 namespace ProjetoAgendaDotNet
 {
     public partial class Form3 : Form
     {
+        private DataSetPessoa dsPessoa;
+        private Dados.DataSetPessoaTableAdapters.DSPessoaTableAdapter dSPessoaTableAdapter;
+
         public Form3()
         {
             InitializeComponent();
         }
 
+
+        public Form3(DataSetPessoa dataSet, Dados.DataSetPessoaTableAdapters.DSPessoaTableAdapter tableAdapter)
+        {
+            InitializeComponent();
+            this.dsPessoa = dataSet;
+            this.dSPessoaTableAdapter = tableAdapter;
+        }
+
         private void Form3_Load(object sender, EventArgs e)
         {
-            // Carrega todos os dados inicialmente para popular o ComboBox de cidades
-            this.dSPessoaTableAdapter.Fill(this.dataSetPessoa.DSPessoa);
-            PopulateCityComboBox();
-            // Limpa o DataGridView para não exibir dados ao abrir
-            dSPessoaDataGridView.DataSource = null;
+            if (this.dsPessoa == null) return;
+
+            // Vincula a fonte de dados que já foi carregada
+            dSPessoaBindingSource.DataSource = this.dsPessoa;
+            dSPessoaBindingSource.DataMember = "DSPessoa";
+
+            // Popula o ComboBox com as colunas que podem ser filtradas
+            cmbColuna.Items.Clear();
+            cmbColuna.Items.Add("Nome");
+            cmbColuna.Items.Add("Endereco");
+            cmbColuna.Items.Add("Cidade");
+            cmbColuna.Items.Add("Email");
+            cmbColuna.Items.Add("Telefone");
+            cmbColuna.SelectedIndex = 0;
         }
 
-        private void PopulateCityComboBox()
+        private void btnFiltrar_Click(object sender, EventArgs e)
         {
-            // Pega as cidades distintas do DataSet e as adiciona ao ComboBox
-            var cities = this.dataSetPessoa.DSPessoa
-                             .Select(row => row.Field<string>("Cidade"))
-                             .Distinct()
-                             .OrderBy(city => city);
-
-            cmbCidade.Items.Clear();
-            foreach (var city in cities)
+            if (cmbColuna.SelectedItem == null || string.IsNullOrWhiteSpace(txtValor.Text))
             {
-                cmbCidade.Items.Add(city);
-            }
-        }
-
-        private void btnTodos_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                // Conecta o BindingSource ao DataSet completo e exibe no DataGridView
-                this.dSPessoaBindingSource.DataSource = this.dataSetPessoa.DSPessoa;
-                this.dSPessoaDataGridView.DataSource = this.dSPessoaBindingSource;
-                lblStatus.Text = $"{this.dSPessoaBindingSource.Count} registros encontrados.";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Falha ao carregar relatório: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void btnFiltrarCidade_Click(object sender, EventArgs e)
-        {
-            if (cmbCidade.SelectedItem == null || string.IsNullOrEmpty(cmbCidade.Text))
-            {
-                MessageBox.Show("Por favor, selecione uma cidade para filtrar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, selecione uma coluna e digite um valor para filtrar.", "Aviso");
                 return;
             }
 
-            string cidadeFiltrada = cmbCidade.Text;
+            string coluna = cmbColuna.SelectedItem.ToString();
+            string valor = txtValor.Text;
 
-            try
+            if (!dsPessoa.DSPessoa.Columns.Contains(coluna))
             {
-                // Filtra os dados com base na cidade selecionada usando LINQ to DataSet
-                var query = from pessoa in this.dataSetPessoa.DSPessoa
-                            where pessoa.Field<string>("Cidade").Equals(cidadeFiltrada, StringComparison.OrdinalIgnoreCase)
-                            select pessoa;
+                MessageBox.Show($"A coluna '{coluna}' não foi encontrada nos dados. Verifique o DataSet.", "Erro");
+                return;
+            }
 
-                if (query.Any())
-                {
-                    // Cria uma nova tabela com os resultados filtrados
-                    DataTable filteredTable = query.CopyToDataTable();
-                    this.dSPessoaBindingSource.DataSource = filteredTable;
-                    this.dSPessoaDataGridView.DataSource = this.dSPessoaBindingSource;
-                }
-                else
-                {
-                    // Se não houver resultados, limpa o grid
-                    this.dSPessoaDataGridView.DataSource = null;
-                    MessageBox.Show("Nenhum registro encontrado para a cidade selecionada.", "Sem Resultados", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                lblStatus.Text = $"{this.dSPessoaBindingSource.Count} registros encontrados para a cidade '{cidadeFiltrada}'.";
-            }
-            catch (Exception ex)
+            // Usa o Filter do BindingSource, que é a maneira correta quando os dados estão vinculados
+            dSPessoaBindingSource.Filter = $"[{coluna}] LIKE '%{valor.Replace("'", "''")}%'";
+        }
+
+        private void btnMostrarTodos_Click(object sender, EventArgs e)
+        {
+            dSPessoaBindingSource.Filter = null; // Limpa o filtro
+            txtValor.Clear();
+        }
+
+        private void btnGerarCSV_Click(object sender, EventArgs e)
+        {
+            if (dSPessoaBindingSource.Count == 0)
             {
-                MessageBox.Show("Falha ao filtrar dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Não há dados (filtrados) para exportar!", "Aviso");
+                return;
             }
+
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Arquivo CSV (*.csv)|*.csv";
+            sfd.FileName = "RelatorioFiltrado.csv";
+
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    StringBuilder sb = new StringBuilder();
+                    var columnNames = dsPessoa.DSPessoa.Columns.Cast<DataColumn>().Select(column => $"\"{column.ColumnName}\"");
+                    sb.AppendLine(string.Join(";", columnNames));
+
+                    foreach (DataRowView drv in dSPessoaBindingSource)
+                    {
+                        var fields = drv.Row.ItemArray.Select(field => $"\"{field.ToString()}\"");
+                        sb.AppendLine(string.Join(";", fields));
+                    }
+
+                    File.WriteAllText(sfd.FileName, sb.ToString(), Encoding.UTF8);
+                    MessageBox.Show("Arquivo CSV gerado com sucesso!", "Sucesso");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao gerar arquivo CSV: " + ex.Message, "Erro");
+                }
+            }
+        }
+
+        private void btnGerarXML_Click(object sender, EventArgs e)
+        {
+            if (dSPessoaBindingSource.Count == 0)
+            {
+                MessageBox.Show("Não há dados (filtrados) para exportar!", "Aviso");
+                return;
+            }
+
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Arquivo XML (*.xml)|*.xml";
+            sfd.FileName = "RelatorioFiltrado.xml";
+
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    DataTable dtFiltrada = (dSPessoaBindingSource.List as DataView).ToTable();
+
+                    if (dtFiltrada != null)
+                    {
+                        dtFiltrada.TableName = "Pessoas";
+                        DataSet dsParaExportar = new DataSet("Agenda");
+                        dsParaExportar.Tables.Add(dtFiltrada);
+                        dsParaExportar.WriteXml(sfd.FileName);
+                        MessageBox.Show("Arquivo XML gerado com sucesso!", "Sucesso");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao gerar arquivo XML: " + ex.Message, "Erro");
+                }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e) // Ou o nome do seu botão
+        {
+            // Pega a visualização atual dos dados (que já está filtrada)
+            DataView visaoFiltrada = (DataView)dSPessoaBindingSource.List;
+
+            if (visaoFiltrada.Count == 0)
+            {
+                MessageBox.Show("Não há dados (filtrados) para exibir no relatório.", "Aviso");
+                return;
+            }
+
+            // Cria e mostra o novo formulário, passando os dados filtrados para ele
+            FormRelatorioListView formRelatorio = new FormRelatorioListView(visaoFiltrada);
+            formRelatorio.MdiParent = this.MdiParent;
+            formRelatorio.Show();
         }
     }
 }

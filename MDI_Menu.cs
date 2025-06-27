@@ -35,7 +35,7 @@ namespace ProjetoAgendaDotNet
             // Carrega os dados do banco de dados de forma segura
             try
             {
-                this.dSPessoaTableAdapter.Fill(this.dataSetPessoa.DSPessoa);
+                this.dSPessoasTableAdapter.Fill(this.dataSetPessoa.DSPessoas);
             }
             catch (Exception ex)
             {

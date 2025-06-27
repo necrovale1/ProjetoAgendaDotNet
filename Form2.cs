@@ -26,7 +26,7 @@ namespace ProjetoAgendaDotNet
             // Vincula os dados já carregados à grade de visualização
             if (this.dataSetPessoa != null)
             {
-                this.dSPessoaBindingSource.DataSource = this.dataSetPessoa.DSPessoa;
+                this.dSPessoaBindingSource.DataSource = this.dataSetPessoa.DSPessoas;
             }
         }
 

@@ -55,7 +55,7 @@ namespace ProjetoAgendaDotNet
             string coluna = cmbColuna.SelectedItem.ToString();
             string valor = txtValor.Text;
 
-            if (!dsPessoa.DSPessoa.Columns.Contains(coluna))
+            if (!dsPessoa.DSPessoas.Columns.Contains(coluna))
             {
                 MessageBox.Show($"A coluna '{coluna}' não foi encontrada nos dados. Verifique o DataSet.", "Erro");
                 return;
@@ -88,7 +88,7 @@ namespace ProjetoAgendaDotNet
                 try
                 {
                     StringBuilder sb = new StringBuilder();
-                    var columnNames = dsPessoa.DSPessoa.Columns.Cast<DataColumn>().Select(column => $"\"{column.ColumnName}\"");
+                    var columnNames = dsPessoa.DSPessoas.Columns.Cast<DataColumn>().Select(column => $"\"{column.ColumnName}\"");
                     sb.AppendLine(string.Join(";", columnNames));
 
                     foreach (DataRowView drv in dSPessoaBindingSource)

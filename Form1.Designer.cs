@@ -132,13 +132,13 @@
             // 
             // dSPessoaTableAdapter
             // 
-            this.dSPessoaTableAdapter.ClearBeforeFill = true;
+            this.dSPessoasTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.Connection = null;
-            this.tableAdapterManager.DSPessoaTableAdapter = null;
+            this.tableAdapterManager.DSPessoasTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = ProjetoAgendaDotNet.Dados.DataSetPessoaTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // dSPessoaBindingNavigator

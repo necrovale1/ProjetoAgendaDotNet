@@ -15,14 +15,14 @@ namespace ProjetoAgendaDotNet
         }
 
         // Construtor que recebe os dados do MDI_Menu
-        public Form1(DataSetPessoa dsPessoa, Dados.DataSetPessoaTableAdapters.DSPessoaTableAdapter ta)
+        public Form1(DataSetPessoa dsPessoas, Dados.DataSetPessoaTableAdapters.DSPessoaTableAdapter ta)
         {
             InitializeComponent();
 
             // Faz o formulário usar os componentes de dados que vieram do MDI_Menu
-            this.dataSetPessoa = dsPessoa;
-            this.dSPessoaTableAdapter.Connection = ta.Connection; // Usa a mesma conexão
-            this.tableAdapterManager.DSPessoaTableAdapter = this.dSPessoaTableAdapter;
+            this.dataSetPessoas = dsPessoas;
+            this.dSPessoasTableAdapter.Connection = ta.Connection; // Usa a mesma conexão
+            this.tableAdapterManager.DSPessoasTableAdapter = this.dSPessoasTableAdapter;
         }
 
         private void dSPessoaBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -44,7 +44,7 @@ namespace ProjetoAgendaDotNet
         {
             // Vincula os dados já carregados aos controles do formulário
             // O BindingSource já está configurado no designer para usar o dataSetPessoa
-            this.dSPessoaBindingSource.DataSource = this.dataSetPessoa.DSPessoa;
+            this.dSPessoaBindingSource.DataSource = this.dataSetPessoa.DSPessoas;
         }
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
